@@ -1,0 +1,41 @@
+---
+title: "My Shiny App"
+author: "Sarah"
+date: "9/13/2019"
+output: ioslides_presentation
+---
+
+## Brief Description
+
+* Limited by my own lack of creativity, I decided to make an app that shows the population of the different countries of the world.
+
+Here's just a glimpse of the dataset
+
+```{r popdata}
+library(tidyr)
+data("population")
+summary(population)
+```
+
+## Interesting Population Trend 1
+
+It's actually quite cool to look and see the trends of the different countries populations. For example: American Samoa
+
+```{r asamoa, echo=FALSE}
+asam<-subset(population,country == "American Samoa")
+plot(asam$year, asam$population, xlab = "Year", ylab = "Population", main = "Population of American Samoa")
+```
+
+## Interesting Population Trend 2
+
+Or here's another one: Andorra (It's the country on the border of France and Spain)
+```{r andorra, echo = FALSE}
+ando<-subset(population,country == "Andorra")
+plot(ando$year, ando$population, xlab = "Year", ylab = "Population", main = "Population of Andorra")
+```
+
+##
+#### In conclusion, my shiny app is really cool to see the population of different countries
+
+
+###Thanks for the review!
